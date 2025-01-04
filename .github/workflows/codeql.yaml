@@ -12,12 +12,7 @@
 name: "CodeQL Advanced"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: '44 18 * * 0'
+  workflow_dispatch:
 
 jobs:
   analyze:
@@ -94,7 +89,7 @@ jobs:
     - name: Generate CodeQL Report
       uses: rsdmike/github-security-report-action@v3.0.4
       with:
-        token: ${{ secrets.SECURITY_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         template: report
 
     - name: Upload Report
