@@ -92,7 +92,7 @@ jobs:
         category: "/language:${{matrix.language}}"
 
     - name: Generate CodeQL Report
-      uses: rsdmike/github-security-report-action@v2
+      uses: rsdmike/github-security-report-action@v3.0.4
       with:
         token: ${{ secrets.SECURITY_TOKEN }}
         template: report
